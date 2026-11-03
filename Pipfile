@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+geopandas = "*"
+sqlalchemy = "*"
+geoalchemy2 = "*"
+psycopg = {extras = ["binary"], version = "*"}
+shapely = "*"
+python-dotenv = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.14"
