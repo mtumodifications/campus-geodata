@@ -13,5 +13,10 @@ python-dotenv = "*"
 
 [dev-packages]
 
+[scripts]
+setup = "python src/campus_map/setup_db.py"
+seed = "python src/campus_map/populate_db.py"
+test = "pytest tests/"
+
 [requires]
 python_version = "3.14"
