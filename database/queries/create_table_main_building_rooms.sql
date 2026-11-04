@@ -10,3 +10,5 @@ CREATE TABLE IF NOT EXISTS
     );
 
 CREATE INDEX IF NOT EXISTS main_building_rooms_geom_idx ON main_building_rooms USING GIST (geom);
+
+ALTER TABLE main_building_rooms ENABLE ROW LEVEL SECURITY;
