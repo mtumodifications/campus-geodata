@@ -1,10 +1,10 @@
 import os
+
 from pathlib import Path
 from dotenv import load_dotenv
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-print(PROJECT_ROOT)
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 DATABASE_DIR = PROJECT_ROOT / "database"
 DATA_DIR = PROJECT_ROOT / "data"
@@ -19,3 +19,9 @@ DB_CONFIG = {
     "password": os.getenv("DB_PASSWORD"),
     "sslmode": "require",
 }
+
+DATABASE_URL = (
+    f"postgresql://{DB_CONFIG['user']}:{DB_CONFIG['password']}"
+    f"@{DB_CONFIG['host']}:{DB_CONFIG['port']}"
+    f"/{DB_CONFIG['dbname']}?sslmode={DB_CONFIG['sslmode']}"
+)
